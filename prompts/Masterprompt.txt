@@ -1,0 +1,67 @@
+TRANSCRIPTOR
+
+PROMPT_START
+Role: Senior Python Developer & Automation Expert with Streamlit
+Task: Create a Streamlit web application that extracts transcripts from YouTube videos and saves them to downloadable files.
+File structure:
+/transcriptor
+│
+├── transcriptor.py (Main Streamlit file)
+└── README.md
+└── images/ (with images, logos, etc.)
+└── skills/ (skill files with knowledge for each functionality)
+
+Technical Specifications:
+UI: Use Streamlit.
+ - A text input field for the YouTube URL.
+ - A button to trigger the transcription process.
+ - A preview area to show the first 500 characters of the transcript.
+
+Transcription Engine:
+ - Integrate the youtube-transcript-api library.
+ - Support for multiple languages (default to 'es' and 'en').
+ - Logic to concatenate all text segments into a single, clean string.
+
+File Generation:
+ - Provide a st.download_button to export the transcript as a .txt file.
+ - The filename should be generated dynamically (e.g., transcript_[VIDEO_ID].txt).
+
+Data Handling & Metadata:
+ - Use pytube or yt-dlp (lightweight usage) to fetch the video title to display in the UI.
+
+Error Handling:
+ - Handle cases where subtitles are disabled/unavailable for a specific video.
+ - Validate the URL format before processing.
+
+Output Requirements:
+ - Provide the complete app.py code.
+ - Provide a requirements.txt for the app (including: streamlit, youtube-transcript-api, pytube).
+
+Ensure the code is modular and includes comments for the transcription fetching logic.
+PROMPT_END
+
+REQUISITOS TÉCNICOS:
+1. Interfaz de Usuario (app.py):
+   - Input de texto para la URL de YouTube.
+   - Botón de "Procesar".
+   - Visualización previa de los datos extraídos.
+   - Selector de formato de exportación.
+
+2. Extracción (skills/youtube_extractor.py):
+   - Debe usar la librería `youtube-transcript-api`.
+   - Debe extraer el ID del video desde la URL.
+   - Debe retornar el texto de la transcripción (que servirá para generar los títulos/puntos clave).
+
+3. Exportación (skills/exporters.py):
+   - Implementar funciones para exportar a: JSON, CSV y TXT.
+   - El usuario debe poder descargar el archivo directamente desde la UI de Streamlit usando `st.download_button`.
+
+INSTRUCCIONES DE SALIDA:
+- Genera el código completo para cada archivo mencionado.
+- Asegúrate de incluir el manejo de errores (ej. URL inválida o video sin subtítulos).
+- Usa un diseño limpio con `st.columns` para los botones de exportación.
+- Incluye el archivo `requirements.txt` necesario.
+
+[COMIENZA LA GENERACIÓN DEL CÓDIGO AHORA]
+
+
